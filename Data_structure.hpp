@@ -29,8 +29,6 @@
 template<unsigned Type, unsigned Size>
 class SPdata {
     
-    //SPdata(std::initializer_list<double> p){};
-    
 public:
     
       SPdata(size_t space_size, size_t time_size, size_t n_covariates, std::string file):
