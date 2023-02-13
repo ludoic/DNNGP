@@ -130,6 +130,9 @@ int main(int argc, const char * argv[]) {
     
     
     
+    // -------------------------------------  Run the chain  -------------------------------------
+    
+    
     // call .run_MCMC with the parameters, the output is an object of type Chain_result
     Chain_result results = model.run_MCMC(n_chain_steps, n_MALA_steps, n_neighbor,
                                           sigma2, a, c, k,
