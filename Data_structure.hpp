@@ -219,7 +219,7 @@ public:
     
     Eigen::MatrixXd get_covariates ()
     {
-        return this-> covariates;
+        return this->x;
     }
     
 private :
