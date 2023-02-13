@@ -33,19 +33,20 @@ class SPdata {
     
 public:
     
-    SPdata(size_t space_size, size_t time_size, size_t n_covariates):
-    space_size(space_size), time_size(time_size), n_points (Size), n_x(n_covariates), space_distance(Eigen::MatrixXd::Zero(space_size, space_size)){
-
-    };
+      SPdata(size_t space_size, size_t time_size, size_t n_covariates, std::string file):
     
-    SPdata() = default;
-    
-    SPdata(size_t space_size, size_t time_size, size_t n_covariates, std::string file):
-    space_size(space_size), time_size(time_size), n_points (space_size*time_size), n_x(n_covariates), space_distance(Eigen::MatrixXd::Zero(space_size, space_size)){
+    space_size(space_size), time_size(time_size), n_points (space_size*time_size), n_x(n_covariates), space_distance(Eigen::MatrixXd::Zero(space_size, space_size))
+    {
+        
         x.resize(Size,n_covariates);
+        y.resize(Size);
+        w0.resize(Size);
+        
         read_file(file);
         compute_spd();
     };
+    
+
     
     friend class Solver;
     
